@@ -1,0 +1,21 @@
+@import "typography";
+@import "colors";
+
+body {
+  font-family: $lightFontFamily;
+  font-size: medium;
+  color: $textColor;
+  margin: 0;
+
+  background: $pageColor;
+}
+
+input {
+  font-family: $regularFontFamily;
+  font-weight: normal;
+  font-size: 1em;
+  padding: 0.5em 1em;
+  color: $textColor;
+  border-radius: 5px;
+  width: 80%;
+}

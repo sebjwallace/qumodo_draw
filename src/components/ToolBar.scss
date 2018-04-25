@@ -1,0 +1,40 @@
+@import "../css/colors";
+
+.ToolBar {
+
+  background: $toolbarBackground;
+  position: absolute;
+  top: 4em;
+  left: 0;
+  bottom: 0;
+  padding: 1em;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+
+  button {
+    appearance: none;
+    border: none;
+    background-color: white;
+    background-size: 1.5em;
+    width: 2em;
+    height: 2em;
+    margin-bottom: 1em;
+    cursor: pointer;
+    color: transparent;
+    overflow: hidden;
+
+    &.selected {
+      background-color: #7ce2d8;
+    }
+
+  }
+
+  ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+}

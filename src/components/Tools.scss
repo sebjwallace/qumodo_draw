@@ -1,0 +1,13 @@
+
+.Tools {
+  composes: controlButton from '../css/controls.scss';
+  composes: flatList      from '../css/controls.scss';
+
+  button {
+    background-size: 1.5em;
+    width: 2em;
+    height: 2em;
+    margin-bottom: 1em;
+    cursor: pointer;
+  }
+}

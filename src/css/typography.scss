@@ -1,0 +1,22 @@
+
+$lightFontFamily: HelveticaNeueLight, Helvetica, Arial, sans-serif;
+$regularFontFamily: HelveticaNeueRegular, Helvetica, Arial, sans-serif;
+$boldFontFamily: HelveticaNeueBold, Helvetica, Arial, sans-serif;
+
+p, .bodyText {
+  font-family: $lightFontFamily;
+  font-size: 1em;
+  font-weight: lighter;
+}
+
+h1, .heading1 {
+  font-family: $regularFontFamily;
+  font-size: 1.6em;
+  font-weight: normal;
+}
+
+h2, .heading2 {
+  font-family: $lightFontFamily;
+  font-size: 1.3em;
+  font-weight: lighter;
+}

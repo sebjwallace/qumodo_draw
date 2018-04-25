@@ -1,0 +1,23 @@
+
+.ColorPicker {
+  composes: controlButton from '../css/controls.scss';
+
+  button {
+    position: relative;
+  }
+}
+
+.selected:after {
+  position: absolute;
+  font-size: 0.6em;
+  display: inline-block;
+  content: 'O';
+  color: black;
+  background: rgba(255,255,255,0.5);
+  padding: 0.3em;
+  top: 0.8em;
+  left: 0.9em;
+  width: 1em;
+  text-align: center;
+  border-radius: 50%;
+}

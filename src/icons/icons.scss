@@ -1,0 +1,46 @@
+
+.iconBox {
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+}
+
+.addButton {
+  composes: iconBox;
+  background-image: url('./icons8-add-100.png');
+}
+
+.openButton {
+  composes: iconBox;
+  background-image: url('./icons8-upload-100.png');
+}
+
+.saveButton {
+  composes: iconBox;
+  background-image: url('./icons8-downloading-updates-48.png');
+}
+
+.drawButton {
+  composes: iconBox;
+  background-image: url('./icons8-edit-100.png');
+}
+
+.ellipseButton {
+  composes: iconBox;
+  background-image: url('./icons8-ellipse-100.png');
+}
+
+.rectangleButton {
+  composes: iconBox;
+  background-image: url('./icons8-rectangular-100.png');
+}
+
+.cancelButton {
+  composes: iconBox;
+  background-image: url('./icons8-delete-filled-100.png');
+}
+
+.checkButton {
+  composes: iconBox;
+  background-image: url('./icons8-checkmark-filled-100.png');
+}

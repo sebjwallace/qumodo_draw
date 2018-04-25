@@ -1,0 +1,27 @@
+@import "./colors.scss";
+
+.flatList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.controlButton button {
+  appearance: none;
+  border: none;
+  background-color: $buttonColor;
+  cursor: pointer;
+  color: transparent;
+  overflow: hidden;
+  transition: background-color 0.5s;
+
+  &:hover {
+    background-color: $hoverColor;
+  }
+
+  &.selected {
+    background-color: $selectedColor;
+    cursor: default;
+    pointer-events: none;
+  }
+}
