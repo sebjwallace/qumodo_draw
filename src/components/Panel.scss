@@ -53,7 +53,7 @@
 }
 
 .buttons {
-  composes: flatList from '../css/controls.scss';
+  composes: flatList      from '../css/controls.scss';
   composes: controlButton from '../css/controls.scss';
 
   display: flex;
