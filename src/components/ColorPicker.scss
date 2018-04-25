@@ -1,5 +1,6 @@
 
 .ColorPicker {
+  composes: flatList      from '../css/controls.scss';
   composes: controlButton from '../css/controls.scss';
 
   button {

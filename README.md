@@ -10,3 +10,5 @@ To install and run:
 $ npm install
 $ npm start
 ```
+
+View on `localhost:8080`

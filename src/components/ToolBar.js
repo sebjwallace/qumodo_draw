@@ -4,6 +4,7 @@ import Tools       from './Tools'
 import ColorPicker from './ColorPicker'
 import PropTypes   from 'prop-types'
 import {AppColors} from '../data/AppColors'
+import '../css/controls.scss'
 
 
 const ToolBar = ({selectedTool, handleToolSelection, handleColorChange}) => (
