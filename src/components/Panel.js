@@ -9,7 +9,6 @@ export const PanelTypes = {
     file: 'file'
 };
 
-
 const Panel = ({title, message, type, value, onCancel, onComplete}) => {
     let newValue = value;
 

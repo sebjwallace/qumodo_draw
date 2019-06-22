@@ -11,37 +11,13 @@ function handleClick(action, handler, event) {
     handler(action);
 }
 
-const TitleBar = ({handleAppAction}) => (
+const TitleBar = () => (
     <div className={styles.TitleBar}>
 
         <div className={styles.logoBox}>
             <img src={qumodoLogo} alt='Qumodo' />
-            Qumodo Draw
+            Qumodo MNIST Predict
         </div>
-
-        <ul className={styles.buttonStrip}>
-            <li>
-                <button className={icons.addButton}
-                        title='New Image'
-                        onClick={handleClick.bind(this, AppActions.NewImage, handleAppAction)}>
-                    New
-                </button>
-            </li>
-            <li>
-                <button className={icons.openButton}
-                        title='Open Image'
-                        onClick={handleClick.bind(this, AppActions.OpenImage, handleAppAction)}>
-                    Open
-                </button>
-            </li>
-            <li>
-                <button className={icons.saveButton}
-                        title='Save Image'
-                        onClick={handleClick.bind(this, AppActions.SaveImage, handleAppAction)}>
-                    Save
-                </button>
-            </li>
-        </ul>
 
     </div>
 );

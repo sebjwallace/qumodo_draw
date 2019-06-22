@@ -6,6 +6,7 @@ import Canvas                    from '../components/Canvas'
 import {DrawMode}                from '../controllers/CanvasController'
 import {AppColors}               from '../data/AppColors'
 import {CanvasEvents}            from '../components/Canvas'
+import styles from './QumodoDraw.scss'
 
 export const AppActions = {
     NewImage: 0,
@@ -93,17 +94,11 @@ class QumodoDraw extends Component {
     };
 
     render() {
-        let {selectedTool, color} = this.state;
 
         return (
-            <div>
+            <div className={styles.container}>
 
                 <TitleBar handleAppAction={this.handleAppAction} />
-
-                <ToolBar selectedTool={selectedTool}
-                         handleToolSelection={this.handleToolSelection}
-                         selectedColor={color}
-                         handleColorChange={this.handleColorChange} />
 
                 <Canvas onReady={this.canvasReady} />
 

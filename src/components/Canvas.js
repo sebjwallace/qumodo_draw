@@ -2,6 +2,7 @@ import React, {Component}  from 'react'
 import styles              from './Canvas.scss'
 import EventListener       from '../controllers/EventListener'
 import CanvasController    from '../controllers/CanvasController'
+import CNNController    from '../controllers/CNNController'
 import Panel, {PanelTypes} from './Panel'
 
 export const CanvasEvents = {
@@ -48,6 +49,11 @@ class Canvas extends Component {
             .removeEventListener(CanvasEvents.SaveImage,          this.saveImage)
             .removeEventListener(CanvasEvents.ColorChanged,       this.colorChanged)
             .removeEventListener(CanvasEvents.DrawingToolChanged, this.drawingToolChanged);
+    }
+
+    componentDidMount(){
+        this.canvasController = new CanvasController(this.refs.canvas);
+        this.cnnController = new CNNController(this.refs.canvas);
     }
 
     newImage  = async () => {
@@ -155,9 +161,7 @@ class Canvas extends Component {
         let {panel} = this.state;
         return (
             <div className={styles.Canvas}>
-                <canvas ref={elm => {
-                    if (elm && !this.canvasController) this.canvasController = new CanvasController(elm);
-                }}>
+                <canvas ref="canvas">
                     Your browser does not support this app!
                 </canvas>
 

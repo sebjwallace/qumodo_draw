@@ -26,40 +26,21 @@ class CanvasController {
         this.canvas.addEventListener('mousemove', this.mouseMove);
         this.canvas.addEventListener('mouseleave', this.mouseLeave);
 
-        if (this.drawMode === DrawMode.draw) {
-            this.ctx.beginPath();
-            this.ctx.moveTo(event.offsetX, event.offsetY);
-            this.ctx.lineWidth = 5;
-        } else {
-            this.startPosition = {x: event.offsetX, y: event.offsetY};
-            this.cachedImage = new Image();
-            this.cachedImage.src = this.canvas.toDataURL();
-        }
+        this.ctx.beginPath();
+        this.ctx.moveTo(event.offsetX, event.offsetY);
+        this.ctx.lineWidth = 22;
     };
 
     mouseMove = (event) => {
-        if (this.drawMode === DrawMode.draw) {
-            this.ctx.lineTo(event.offsetX, event.offsetY);
-            this.ctx.stroke();
-        } else if (this.drawMode === DrawMode.rectangle) {
-            this.restoreContext();
-            this.ctx.strokeRect(...this.getRectangle(event, this.startPosition));
-        } else if (this.drawMode === DrawMode.ellipse) {
-            this.drawEllipse(event, this.startPosition);
-            this.ctx.stroke();
-        }
+        this.ctx.strokeStyle = 'white'
+        this.ctx.lineTo(event.offsetX, event.offsetY);
+        this.ctx.stroke();
     };
 
     mouseUp = (event) => {
         this.removeListeners();
 
-        if (this.drawMode === DrawMode.rectangle) {
-            this.restoreContext();
-            this.ctx.fillRect(...this.getRectangle(event, this.startPosition));
-        } else if (this.drawMode === DrawMode.ellipse) {
-            this.drawEllipse(event, this.startPosition);
-            this.ctx.fill();
-        }
+        // this.clearCanvas();
 
         this.tidyMemory();
     };
@@ -119,9 +100,9 @@ class CanvasController {
 
     clearCanvas() {
         this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
-        this.ctx.fillStyle = '#ffffff';
+        this.ctx.fillStyle = '#000';
         this.ctx.fillRect(0, 0, this.canvas.width, this.canvas.height);
-        this.ctx.fillStyle = this.color;
+        this.ctx.fillStyle = '#fff';
     }
 
     loadImageData(file) {
@@ -147,6 +128,7 @@ class CanvasController {
     }
 
     setColor(color) {
+        console.log(color);
         this.color = color;
         this.ctx.strokeStyle = color;
         this.ctx.fillStyle = color;
