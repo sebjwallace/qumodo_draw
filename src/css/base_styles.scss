@@ -8,6 +8,11 @@ body {
   margin: 0;
 
   background: $pageColor;
+  background: #1e5799;
+  background: -moz-linear-gradient(-45deg, #1e5799 0%, #7db9e8 100%);
+  background: -webkit-linear-gradient(-45deg, #1e5799 0%,#7db9e8 100%);
+  background: linear-gradient(135deg, #04111e 0%,#163c62 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1e5799', endColorstr='#7db9e8',GradientType=1 );
 }
 
 input {

@@ -1,18 +1,26 @@
 @import "../css/colors";
 
 .TitleBar {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
+
   background: $toolbarBackground;
-  padding: 1em 2em;
+
+  .strip {
+    height: 0.08em;
+    width: 100%;
+    background: #1e5799;
+    background: -moz-linear-gradient(right, #582736 0%, #c22f3b 100%);
+    background: -webkit-linear-gradient(right, #582736 0%, #c22f3b 100%);
+    background: linear-gradient(to left, #582736 0%, #c22f3b 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#582736', endColorstr='#c22f3b',GradientType=1 );
+  }
+
 }
 
 .logoBox {
   display: flex;
   flex-direction: row;
   align-items: center;
+  padding: 1em;
 
   img {
     width: 3em;

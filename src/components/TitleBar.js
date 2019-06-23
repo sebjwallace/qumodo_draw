@@ -19,6 +19,8 @@ const TitleBar = () => (
             Qumodo MNIST Predict
         </div>
 
+        <div className={styles.strip}></div>
+
     </div>
 );
 

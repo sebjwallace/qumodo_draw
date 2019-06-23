@@ -6,7 +6,10 @@ import Canvas                    from '../components/Canvas'
 import {DrawMode}                from '../controllers/CanvasController'
 import {AppColors}               from '../data/AppColors'
 import {CanvasEvents}            from '../components/Canvas'
-import styles from './QumodoDraw.scss'
+import CNNController from '../controllers/CNNController'
+import Prediction from '../components/Prediction'
+import Card from '../components/Card'
+import Button from '../components/Button'
 
 export const AppActions = {
     NewImage: 0,
@@ -24,6 +27,8 @@ class QumodoDraw extends Component {
             color: AppColors.black,
             filename: 'MyImage'
         };
+
+        this.cnnController = new CNNController()
     }
 
     componentWillMount() {
@@ -93,14 +98,35 @@ class QumodoDraw extends Component {
         }
     };
 
+    async handleCanvasDraw(canvas){
+        const { predictions, guess } = await this.cnnController.predict(canvas);
+        this.setState({ predictions, guess });
+    }
+
     render() {
 
+        const {predictions, guess} = this.state;
+
         return (
-            <div className={styles.container}>
+            <div>
 
                 <TitleBar handleAppAction={this.handleAppAction} />
 
-                <Canvas onReady={this.canvasReady} />
+                <Card>
+                    <Canvas
+                        onReady={this.canvasReady}
+                        onDrawn={this.handleCanvasDraw.bind(this)}
+                    />
+                    <br/>
+                    <Button>
+                        Clear
+                    </Button>
+                    <br/>
+                    <Prediction
+                        prediction={predictions}
+                        guess={guess}
+                    />
+                </Card>
 
             </div>
         );
