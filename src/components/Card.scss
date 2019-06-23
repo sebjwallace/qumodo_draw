@@ -1,9 +1,25 @@
 
 .Card {
 
-    background: rgba(35, 66, 102, 0.33);
-    padding: 20px;
-    margin: 10px;
     width: fit-content;
+    margin: 10px;
+    
+}
+
+.title, .body {
+
+    padding: 20px;
+
+}
+
+.title {
+
+    background: rgba(51, 103, 161, 0.33);
+
+}
+
+.body {
+
+    background: rgba(35, 66, 102, 0.33);
 
 }

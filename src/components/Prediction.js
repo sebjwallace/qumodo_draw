@@ -2,7 +2,7 @@ import React, {Component}  from 'react'
 import styles from './Prediction.scss'
 
 const colours = {
-    orange: 'rgb(195,85,28)',
+    yellow: '#e79e10',
     blue: score => `rgba(30,94,158,${score+0.1})`
 }
 
@@ -15,8 +15,8 @@ class Prediction extends Component {
     }
 
     getStyle(score,index){
-        const {orange, blue} = colours;
-        const background = index === this.props.guess ? orange : blue(score);
+        const {yellow, blue} = colours;
+        const background = index === this.props.guess ? yellow : blue(score);
         return {
             width: `${score*260}px`,
             background

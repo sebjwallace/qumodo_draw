@@ -1,17 +1,14 @@
 
-import React, {Component}  from 'react'
+import React from 'react'
 import styles from './Card.scss'
 
-class Card extends Component {
-
-    render(){
-
-        return <div className={styles.Card}>
-            {this.props.children}
-        </div>
-
-    }
-
-}
+const Card = ({ title, children }) => <div className={styles.Card}>
+    <div className={styles.title}>
+        { title }
+    </div>
+    <div className={styles.body}>
+        { children }
+    </div>
+</div>
 
 export default Card;

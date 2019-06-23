@@ -159,6 +159,13 @@ class Canvas extends Component {
         );
     }
 
+    clearCanvas = () => {
+        const canvas = this.refs.canvas;
+        const ctx = canvas.getContext('2d');
+        ctx.fillStyle = '#000';
+        ctx.fillRect(0,0,canvas.width,canvas.height);
+    }
+
     render() {
         return (
             <div className={styles.Canvas}>

@@ -1,6 +1,5 @@
 import React, {Component}        from 'react'
 import TitleBar                  from '../components/TitleBar'
-import ToolBar                   from '../components/ToolBar'
 import EventListener             from '../controllers/EventListener'
 import Canvas                    from '../components/Canvas'
 import {DrawMode}                from '../controllers/CanvasController'
@@ -8,6 +7,7 @@ import {AppColors}               from '../data/AppColors'
 import {CanvasEvents}            from '../components/Canvas'
 import CNNController from '../controllers/CNNController'
 import Prediction from '../components/Prediction'
+import FeatureMap from '../components/FeatureMap'
 import Card from '../components/Card'
 import Button from '../components/Button'
 
@@ -98,35 +98,47 @@ class QumodoDraw extends Component {
         }
     };
 
-    async handleCanvasDraw(canvas){
-        const { predictions, guess } = await this.cnnController.predict(canvas);
-        this.setState({ predictions, guess });
+    handleCanvasDraw = async canvas => {
+        const { predictions, guess, activations } = await this.cnnController.predict(canvas);
+        const cnnSummary = this.cnnController.summary;
+        this.setState({ predictions, guess, activations, cnnSummary });
     }
 
     render() {
 
-        const {predictions, guess} = this.state;
+        const { predictions, guess, activations, cnnSummary } = this.state;
+        const { canvas } = this.refs;
 
         return (
             <div>
 
                 <TitleBar handleAppAction={this.handleAppAction} />
 
-                <Card>
-                    <Canvas
-                        onReady={this.canvasReady}
-                        onDrawn={this.handleCanvasDraw.bind(this)}
-                    />
-                    <br/>
-                    <Button>
-                        Clear
-                    </Button>
-                    <br/>
-                    <Prediction
-                        prediction={predictions}
-                        guess={guess}
-                    />
-                </Card>
+                <div style={{display:'flex'}}>
+                    <Card title="Draw &amp; Predict">
+                        <Canvas
+                            onReady={this.canvasReady}
+                            onDrawn={this.handleCanvasDraw}
+                            ref="canvas"
+                        />
+                        <br/>
+                        <Button onClick={canvas && canvas.clearCanvas}>
+                            Clear
+                        </Button>
+                        <br/>
+                        <Prediction
+                            prediction={predictions}
+                            guess={guess}
+                        />
+                    </Card>
+
+                    {activations && <Card title="Analysis">
+                        <FeatureMap
+                            activations={activations}
+                            summary={cnnSummary}
+                        />
+                    </Card>}
+                </div>
 
             </div>
         );

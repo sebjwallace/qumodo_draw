@@ -16,7 +16,7 @@ const TitleBar = () => (
 
         <div className={styles.logoBox}>
             <img src={qumodoLogo} alt='Qumodo' />
-            Qumodo MNIST Predict
+            Qumodo CNN MNIST
         </div>
 
         <div className={styles.strip}></div>
