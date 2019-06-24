@@ -1,6 +1,7 @@
 import React, {Component}  from 'react'
+import styles from './NNLayer.scss'
 
-class LayerViz extends Component {
+class NNLayer extends Component {
 
     constructor(props){
 
@@ -9,8 +10,8 @@ class LayerViz extends Component {
     }
 
     renderLayer(){
-        const {activations} = this.props;
-        const canvas = this.refs.canvas;
+        const { activations } = this.props;
+        const { canvas } = this.refs;
         const ctx = canvas.getContext('2d');
         const isVector = !isNaN(activations[0]);
         isVector ? this.renderVector(canvas,ctx,activations)
@@ -54,16 +55,18 @@ class LayerViz extends Component {
 
     render(){
 
-        return <div>
+        return <div className={styles.NNLayer}>
             <canvas
                 ref="canvas"
                 width="1000"
                 height="40"
-            />
+            >
+                Sorry, your browser does not support HTML5 Canvas
+            </canvas>
         </div>
 
     }
 
 }
 
-export default LayerViz;
+export default NNLayer;

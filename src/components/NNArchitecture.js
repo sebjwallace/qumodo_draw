@@ -1,8 +1,8 @@
 import React, {Component}  from 'react'
-import styles from './FeatureMap.scss'
-import LayerViz from './LayerViz'
+import styles from './NNArchitecture.scss'
+import NNLayer from './NNLayer'
 
-class FeatureMap extends Component {
+class NNArchitecture extends Component {
 
     constructor(props){
 
@@ -21,11 +21,11 @@ class FeatureMap extends Component {
                     <b className={styles.name}>{name} </b>
                     <span className={styles.description}>{activation}</span>
                 </div>
-                <LayerViz activations={layer}/>
+                <NNLayer activations={layer}/>
             </div>
         })
 
-        return <div className={styles.FeatureMap}>
+        return <div>
             { layers }
         </div>
 
@@ -33,4 +33,4 @@ class FeatureMap extends Component {
 
 }
 
-export default FeatureMap;
+export default NNArchitecture;

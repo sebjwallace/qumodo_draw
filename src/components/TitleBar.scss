@@ -27,17 +27,3 @@
     margin-right: 1em;
   }
 }
-
-.buttonStrip {
-  composes: controlButton from '../css/controls.scss';
-  composes: flatList from '../css/controls.scss';
-  display: flex;
-
-  button {
-    background-size: 2em;
-    margin-left: 1em;
-    width: 2.8em;
-    height: 2.8em;
-    border-radius: 5px;
-  }
-}
