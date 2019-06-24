@@ -1,18 +1,20 @@
 
+@import "../css/colors";
+
 .layer {
 
-    margin: 5px 0px;
+    margin: 1em 0;
 
 }
 
 .name {
 
-    color: white;
+    color: $white;
 
 }
 
 .description {
 
-    color: #e79e10;
+    color: $brandYellow;
 
 }

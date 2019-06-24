@@ -1,7 +1,6 @@
 import React         from 'react'
 import styles        from './TitleBar.scss'
 import qumodoLogo    from '../images/qumodo_logo.png'
-import '../css/controls.scss'
 
 const TitleBar = () => (
     <div className={styles.TitleBar}>

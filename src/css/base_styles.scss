@@ -15,13 +15,3 @@ body {
   background: linear-gradient(135deg, #04111e 0%,#13375c 100%);
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#04111e', endColorstr='#13375c',GradientType=1 );
 }
-
-input {
-  font-family: $regularFontFamily;
-  font-weight: normal;
-  font-size: 1em;
-  padding: 0.5em 1em;
-  color: $textColor;
-  border-radius: 5px;
-  width: 80%;
-}

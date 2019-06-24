@@ -1,10 +1,12 @@
 
+@import "../css/colors";
+
 .Button {
 
     width: 100%;
-    padding: 4px 0px;
-    color: #fff;
-    background: #254d69;
+    padding: 0.5em 0;
+    color: $white;
+    background: $lightBlue;
     text-align: center;
 
 }

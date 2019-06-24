@@ -46,7 +46,10 @@ class QumodoDraw extends Component {
 
         const { canvas } = this.refs;
 
-        const drawCard = <Card title="Draw &amp; Predict">
+        const drawCard = <Card
+            title="Draw &amp; Predict"
+            style={{marginRight: 0}}
+        >
             <Canvas
                 onReady={this.canvasReady}
                 onDrawn={this.handleCanvasDraw}

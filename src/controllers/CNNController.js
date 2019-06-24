@@ -1,7 +1,7 @@
 
 import * as tf from '@tensorflow/tfjs';
 
-const MODEL_URL = 'http://localhost:3000/model';
+const modelUrl = 'http://localhost:3000/model'; // hardcode is here for now
 
 class CNNController {
 
@@ -10,7 +10,7 @@ class CNNController {
     }
 
     async loadModel(){
-        this.model = await tf.loadLayersModel(MODEL_URL);
+        this.model = await tf.loadLayersModel(modelUrl);
     }
 
     async predict(canvas){

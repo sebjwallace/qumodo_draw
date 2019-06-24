@@ -2,7 +2,10 @@
 import React from 'react'
 import styles from './Card.scss'
 
-const Card = ({ title, children }) => <div className={styles.Card}>
+const Card = ({ title, children, style: propStyles }) => <div
+    className={styles.Card}
+    style={propStyles}
+>
     <div className={styles.title}>
         { title }
     </div>

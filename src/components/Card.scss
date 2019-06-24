@@ -1,25 +1,27 @@
 
+@import "../css/colors";
+
 .Card {
 
     width: fit-content;
-    margin: 10px;
+    margin: 1em;
     
 }
 
 .title, .body {
 
-    padding: 20px;
+    padding: 1em;
 
 }
 
 .title {
 
-    background: rgba(51, 103, 161, 0.33);
+    background: $lightBlue;
 
 }
 
 .body {
 
-    background: rgba(35, 66, 102, 0.33);
+    background: rgba($lightBlue, 0.4);
 
 }
