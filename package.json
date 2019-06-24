@@ -3,6 +3,7 @@
   "version": "0.0.1",
   "scripts": {
     "start": "webpack-dev-server",
+    "server": "node ./server/index.js",
     "kill_all_node_processes": "sudo kill -9 $(sudo ps -a | grep node | awk '{print $1}')",
     "test": "echo \"Error: no test specified\" && exit 1"
   },

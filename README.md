@@ -4,10 +4,21 @@
 
 Simple drawing software built using React and Canvas.
 
-To install and run:
+To install:
 
 ```bash
 $ npm install
+```
+
+To start:
+
+Run the NodeJS HTTP server to serve the CNN model:
+```bash
+$ npm run server
+```
+
+Run the app in dev:
+```bash
 $ npm start
 ```
 
